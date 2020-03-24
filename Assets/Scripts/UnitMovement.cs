@@ -30,8 +30,8 @@ public class UnitMovement : MonoBehaviour
             mouse = Camera.main.ScreenToWorldPoint(mouse);
 
             direction = new Vector2(
-            mouse.x - transform.position.x,
-            mouse.y - transform.position.y
+                mouse.x - transform.position.x,
+                mouse.y - transform.position.y
             );
 
             transform.up = direction;
