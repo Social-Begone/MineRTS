@@ -34,7 +34,7 @@ public class UnitMovement : MonoBehaviour
             mouse.y - transform.position.y
             );
 
-            transform.right = direction;
+            transform.up = direction;
 
         }
 

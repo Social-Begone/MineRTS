@@ -19,7 +19,7 @@ public class LookAtEnemy : MonoBehaviour
         if (!enemy.team)
         {
             pos = enemy2.position - ts.position;
-            transform.right = pos;
+            transform.up = pos;
             enemyVisible = true;
         }
     }
