@@ -12,6 +12,8 @@ public class LookAtEnemy : MonoBehaviour
     public float startTimeBtwShots;
     private float timeBtwShots;
     private bool enemyVisible = false;
+
+
     private void OnTriggerStay2D(Collider2D hitInfo)
     {
         Health enemy = hitInfo.GetComponent<Health>();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// select in square
 public class MouseInputSystem : MonoBehaviour
 {
     public Vector3 startPosition;
