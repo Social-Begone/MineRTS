@@ -7,16 +7,22 @@ using Unity.Transforms;
 public class HealthSystem : SystemBase
 {
     public static volatile bool UnitsCanHealOverheal = false;
-
     protected override void OnUpdate() {
+        // Remove dead
+        Entities
+            .WithAll<Health>()
+            .ForEach(
+                (Entity entity, in Health h) => {
+                    if (h.Value <= 0) World.EntityManager.DestroyEntity(entity);
+                }
+            )
+            .ScheduleParallel();
+
+        // Regen
         Entities
             .WithAll<Health, HealthRegen>()
             .ForEach(
-                (Entity entity, ref Health health, ref HealthRegen healthRegen) => {
-                    if (health.Value <= 0) {
-                        Object.Destroy(entity);
-                        return;
-                    }
+                (ref Health health, ref HealthRegen healthRegen) => {
 
                     float totalTime = healthRegen.TimeSinceLastRegen + Time.DeltaTime;
                     int heal = Mathf.FloorToInt(totalTime * healthRegen.Value);

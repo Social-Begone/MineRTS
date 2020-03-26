@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Unity.Entities;
+using UnityEngine;
 
-public class Team : Component
+public struct Team : IComponentData
 {
-    public string teamName;
+    public string TeamName;
 }
 

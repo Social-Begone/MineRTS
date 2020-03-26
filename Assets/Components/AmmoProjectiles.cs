@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity.Entities;
 
-public struct MoveSpeed : IComponentData
+public struct AmmoProjectiles : IComponentData
 {
-    public float Value;
+    public int Value;
 }

@@ -5,5 +5,3 @@
     public float Value;
     public float TimeSinceLastRegen;
  }
-
-public class HealthRegenComponent : ComponentDataProxy<HealthRegen> { }
